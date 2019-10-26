@@ -27,11 +27,11 @@ to memory constraints.
 ## Usage
 
 ~~~scala
-import org.coursera.metrics.datadog.DatadogReporter
-import org.coursera.metrics.datadog.DatadogReporter.Expansion._
-import org.coursera.metrics.datadog.transport.Transport
-import org.coursera.metrics.datadog.transport.HttpTransport
-import org.coursera.metrics.datadog.transport.UdpTransport
+import DatadogReporter
+import DatadogReporter.Expansion._
+import Transport
+import HttpTransport
+import UdpTransport
 import scala.concurrent.duration.SECONDS
 
 ...
@@ -260,12 +260,12 @@ public class CustomMetricNameFormatterFactory implements MetricNameFormatterFact
 }
 ~~~
 
-##### 3. Add the Factory to `org.coursera.metrics.datadog.MetricNameFormatterFactory` file
+##### 3. Add the Factory to `MetricNameFormatterFactory` file
 
 We need to make sure our `CustomMetricNameFormatterFactory` is added to the list of subTypes
 for `MetricNameFormatterFactory`, otherwise the `"custom"` in our config won't be recognized.
 
-Add a file called `org.coursera.metrics.datadog.MetricNameFormatterFactory` to
+Add a file called `MetricNameFormatterFactory` to
 `src/main/resources/META-INF/services` and add the full path to your class to the file
 (e.g. `com.company.CustomMetricNameFormatterFactory`)
 
@@ -277,7 +277,7 @@ Similar to the `MetricNameFormatter` steps, we need to:
 
 1. Create a DynamicTagsCallback
 2. Create a DynamicTagsCallbackFactory with `@JsonTypeName` annotation
-3. Add the Factory to `org.coursera.metrics.datadog.DynamicTagsCallbackFactory` file
+3. Add the Factory to `DynamicTagsCallbackFactory` file
 
 See above instructions for details.
 

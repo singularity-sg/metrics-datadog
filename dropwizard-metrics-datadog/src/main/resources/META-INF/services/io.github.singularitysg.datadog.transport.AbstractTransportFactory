@@ -1,0 +1,2 @@
+io.github.singularitysg.datadog.transport.HttpTransportFactory
+io.github.singularitysg.datadog.transport.UdpTransportFactory
