@@ -1,8 +1,8 @@
 package io.dropwizard.metrics;
 
 import io.dropwizard.jackson.DiscoverableSubtypeResolver;
-import org.fest.assertions.api.Assertions;
-import org.junit.Test;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class DatadogReporterFactoryTest {
   @Test
